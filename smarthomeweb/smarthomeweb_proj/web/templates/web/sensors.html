@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de-de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SmartHomeWeb - Startseite</title>
+    <link rel="stylesheet" href="../../static/web/styles/base.css">
+    <link rel="stylesheet" href="../../static/web/styles/smarthomestyles_static.css">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .sensors {
+            padding: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        .sensor {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            margin-left: 10px;
+        }
+
+        .sensor:hover {
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SmartHomeWeb</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'showindex' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'showabout' %}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'showcontact' %}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'displaytemps' %}">Temperaturen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'displayhumidity' %}">Luftfeuchtigkeit</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'displaypressure' %}">Luftdruck</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+        {% for sensor in sensorlist %}
+        <div class="sensor">
+            <strong>ID:</strong> {{ sensor.id }}<br>
+            <strong>Raum:</strong> {{ sensor.sen_raum }}<br>
+            <strong>IP-Adresse:</strong> {{ sensor.sen_ip }}<br>
+            <strong>Code:</strong> {{ sensor.sen_code }} <br>
+            <a href="editsensor/{{ sensor.id }}">Bearbeiten...</a>
+        </div>
+        {% endfor %}
+
+        <div class="sensor">
+            <a href="{% url 'add_sensor' %}" class="btn btn-primary">Add New Sensor</a>
+        </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

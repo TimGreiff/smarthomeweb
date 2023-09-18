@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de-de">
+<head>
+    <meta charset="UTF-8">
+    <title>SmartHomeWeb - About</title>
+    <link rel="stylesheet" href="../../static/web/styles/base.css">
+    <link rel="stylesheet" href="../../static/web/styles/smarthomestyles_static.css">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">SmartHomeWeb</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'showindex' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'showabout' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'showcontact' %}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'displaytemps' %}">Temperaturen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'displayhumidity' %}">Luftfeuchtigkeit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'displaypressure' %}">Luftdruck</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'showsensorbasepage' %}">Sensoren</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        <div class="about">
+            <h1>About Us</h1>
+            <p>Welcome to SmartHomeWeb, your source for all things related to home automation and smart technology. Our mission is to make your home smarter and more efficient.</p>
+            <p>With years of experience in the industry, our team is dedicated to providing you with the latest information, product reviews, and tips to transform your home into a smart home.</p>
+        </div>
+    </main>
+
+    <!-- Include JavaScript libraries and custom scripts here -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Your custom JavaScript code goes here -->
+</body>
+</html>
