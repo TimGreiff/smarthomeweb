@@ -3,8 +3,11 @@ from . import views
 from .views import htmlviewer
 from .views import SensorListView
 from .views import login_view
+from django.contrib.auth.views import LogoutView
+
 
 urlpatterns = [
+    path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('', views.login_view, name='login'),
     path('web/', htmlviewer.as_view(template_name="web/index_a.html"), name='showindex'),
     path('about/', htmlviewer.as_view(template_name="web/about.html"), name='showabout'),

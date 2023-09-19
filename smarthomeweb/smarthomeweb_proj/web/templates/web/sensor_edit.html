@@ -15,34 +15,8 @@
             https://getbootstrap.com/docs/5.3/getting-started/javascript/#data-attributes
         -->
     </head>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">SmartHomeWeb</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'showindex' %}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'showabout' %}">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'showcontact' %}">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'displaytemps' %}">Temperaturen</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'displayhumidity' %}">Luftfeuchtigkeit</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'displaypressure' %}">Luftdruck</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    {% include 'navbar.html' %}
+
     <div class="sensor">
         <a href="{% url 'showsensorbasepage' %}" class="btn btn-primary">Back</a>
     </div>
